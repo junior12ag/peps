@@ -1,0 +1,10 @@
+{%extends 'base/base.html'%}
+
+
+{% block content%}
+<form class="form-control" method="post">{% csrf_token %}
+  <h3>Desea eliminar el registro de {{ object.nombre }}</h3>
+  <button type="submit" class="btn btn-danger">Si, Eliminar</button>
+  <a class="btn btn-default" href="{% url 'mascota:mascotalist' %}">Cancelar</a>
+</form>
+{% endblock %}

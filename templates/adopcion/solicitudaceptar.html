@@ -1,0 +1,94 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+
+{{ form.errors }}
+
+<form class="container" method="post" enctype="multipart/form-data">{% csrf_token %}
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="{{form.nombre.name}}">{{form.nombre.label}}</label>
+      {{form.nombre}}
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="{{form.apellidos.name}}">{{form.apellidos.label}}</label>
+      {{form.apellidos}}
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="{{form.identificacion.name}}">{{form.identificacion.label}}</label>
+      {{form.identificacion}}
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="{{form.telefono.name}}">{{form.telefono.label}}</label>
+      {{form.telefono}}
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="{{form.email.name}}">{{form.email.label}}</label>
+      {{form.email}}
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="{{form.sexo.name}}">{{form.sexo.label}}</label>
+      {{form.sexo}}
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="{{form.edad.name}}">{{form.edad.label}}</label>
+      {{form.edad}}
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="{{form.fecha.name}}">{{form.fecha.label}}</label>
+      {{form.fecha}}
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="{{form.ocupacion.name}}">{{form.ocupacion.label}}</label>
+      {{form.ocupacion}}
+    </div>
+  </div>
+
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="{{form.direccion.name}}">{{form.direccion.label}}</label>
+      {{form.direccion}}
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="{{form.razon.name}}">{{form.razon.label}}</label>
+      {{form.razon}}
+    </div>
+  </div>
+
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="{{form.mascota.name}}">{{form.mascota.label}}</label>
+      {{ form.mascota }}
+    </div>
+  </div>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="{{form.estado.name}}">{{form.estado.label}}</label>
+      {{ form.estado }}
+    </div>
+  </div>
+
+<button type="submit" name="button" class="btn btn-primary">Aceptar</button>
+</form>
+
+
+{% endblock %}

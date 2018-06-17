@@ -1,0 +1,51 @@
+{% extends 'base/baseGuest.html' %}
+
+{% block content %}
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">No. Mascota</th>
+        <th scope="col">Foto</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Raza</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Video</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if object_list %}
+      {% for mascota in object_list %}
+      {% if mascota.estado == False %}
+      <tr>
+        <td>{{ mascota.id }}</td>
+        <td>
+            <img src="{{ mascota.foto.url }}" alt="" width="100" height="100">
+        </td>
+        <td>{{ mascota.nombre }}</td>
+        <td>{{ mascota.edad }}</td>
+        <td>{{ mascota.raza }}</td>
+        <td>{{ mascota.sexo}}</td>
+        <td>
+          <a href="{{ mascota.video }}">Video</a>
+        </td>
+        <td>
+          <a class="btn btn-primary" href="{% url 'adopcion:solicitud' mascota.id %}">Adoptar</a>
+        </td>
+      </tr>
+        {% endif %}
+      {% endfor %}
+      {% else %}
+      <h1>No hay mascotas disponibles</h1>
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+
+
+
+
+{%endblock%}

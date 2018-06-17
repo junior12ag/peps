@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+  <div class="table-responsive">
+    <table class="table table-bardered">
+      <thead>
+        <tr>
+          <th scope="col">No. Solicitud</th>
+          <th scope="col">Solicitante</th>
+          <th scope="col">Identificacion</th>
+          <th scope="col">Mascota a Adoptar</th>
+          <th scope="col">Razones</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%if object_list %}
+        {% for solicitud in object_list %}
+        {% if solicitud.estado == null %}
+        <tr>
+          <td>{{ solicitud.id }}</td>
+          <td>{{ solicitud.nombre }}  {{ solicitud.apellidos}}</td>
+          <td>{{ solicitud.identificacion }}</td>
+          <td>{{ solicitud.mascota.nombre }}</td>
+          <td>{{ solicitud.razon }}</td>
+          <td>
+              <a href="{% url 'adopcion:estado' solicitud.id %}" class="btn btn-primary">Evaluar Solicitud</a>
+
+          </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+
+        {%else %}
+        <h1>No hay registros para mostrar</h1>
+        {% endif%}
+      </tbody>
+    </table>
+  </div>
+
+{% endblock %}

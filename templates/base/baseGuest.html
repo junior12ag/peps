@@ -1,0 +1,76 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    {% block extrastatic %}
+    {% endblock %}
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ustom.min.css' %}">
+    <script>
+
+     var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23019901-1']);
+      _gaq.push(['_setDomainName', "bootswatch.com"]);
+        _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+
+    </script>
+
+    <title>Peps</title>
+  </head>
+  <body>
+    {% block navbar %}
+    <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <div class="container">
+      <a href="{% url 'Index' %}" class="navbar-brand">Bienvenidos a Peps</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="" href="{% url 'mascota:mascotalist' %}" id="download">Mascotas <span class="caret"></span></a>
+
+          </li>
+
+        </ul>
+
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Iniciar Sesion <span class="caret"></span></a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+    {% endblock %}
+
+    {% block content %}
+    <h1>Aqui va el contenido</h1>
+    {% endblock %}
+
+
+
+    <script src="https://bootswatch.com/_vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://bootswatch.com/_vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://bootswatch.com/_assets/js/custom.js"></script>
+  </body>
+</html>
