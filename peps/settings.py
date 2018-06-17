@@ -125,7 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATIC_ROOT = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = '/home/jaguiar/projectosWeb/peps/peps/static'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
